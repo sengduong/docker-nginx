@@ -22,8 +22,8 @@ volumes:
   nginx-iot_config:
     driver_opts:
       type: "nfs"
-      o: ${NGINX-IOT_NFS_PATH}
-      device: ${NGINX-IOT_NFS_DEVICE_CONFIG}
+      o: ${NGINX_IOT_NFS_PATH}
+      device: ${NGINX_IOT_NFS_DEVICE_CONFIG}
 
 networks:
   nginx-iot_internal:
