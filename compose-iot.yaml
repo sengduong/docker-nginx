@@ -14,9 +14,12 @@ services:
     #  - 80:80
     #  - 443:443
     restart: unless-stopped
+    networks:
+      - nginx-iot_internal
+      - caddy-2_caddy_net
 
 volumes:
-  nginx_config:
+  nginx-iot_config:
     driver_opts:
       type: "nfs"
       o: ${NGINX-IOT_NFS_PATH}
