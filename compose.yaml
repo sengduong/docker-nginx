@@ -24,5 +24,5 @@ volumes:
 
 networks:
   nginx_internal:
-  caddy-1_caddy_net:
+  caddy-2_caddy_net:
     external: true
