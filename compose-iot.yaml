@@ -9,7 +9,7 @@ services:
       - NGINX_AUTORELOAD= #optional
       - NGINX_AUTORELOAD_WATCHLIST= #optional
     volumes:
-      - nginx-iot_config:/config
+      - nginx_iot_config:/config
     #ports:
     #  - 80:80
     #  - 443:443
@@ -19,7 +19,7 @@ services:
       - caddy-2_caddy_net
 
 volumes:
-  nginx-iot_config:
+  nginx_iot_config:
     driver_opts:
       type: "nfs"
       o: ${NGINX_IOT_NFS_PATH}
