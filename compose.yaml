@@ -1,7 +1,7 @@
 services:
-  nginx:
+  nginx-iot:
     image: lscr.io/linuxserver/nginx:latest
-    container_name: nginx
+    container_name: nginx-iot
     environment:
       - PUID=1000
       - PGID=1000
@@ -9,7 +9,7 @@ services:
       - NGINX_AUTORELOAD= #optional
       - NGINX_AUTORELOAD_WATCHLIST= #optional
     volumes:
-      - nginx_config:/config
+      - nginx-iot_config:/config
     #ports:
     #  - 80:80
     #  - 443:443
@@ -19,10 +19,10 @@ volumes:
   nginx_config:
     driver_opts:
       type: "nfs"
-      o: ${NGINX_NFS_PATH}
-      device: ${NGINX_NFS_DEVICE_CONFIG}
+      o: ${NGINX-IOT_NFS_PATH}
+      device: ${NGINX-IOT_NFS_DEVICE_CONFIG}
 
 networks:
-  nginx_internal:
+  nginx-iot_internal:
   caddy-2_caddy_net:
     external: true
